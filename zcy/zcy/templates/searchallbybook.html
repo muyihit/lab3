@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+		<style>
+			.table1{
+				margin-top:20;margin-left:200
+			}
+			.table2{
+				margin-right:300;margin-top:50
+			}
+			h1{margin-top:50px}
+		</style>
+	</head>
+
+<body bgcolor="#242424">
+<h1><center><font color="yellow"><b>书籍详细信息及作者详细信息<b></font></h1>
+		<hr>
+		<h2><center><a href="/index/"><font color="yellow"><b>返回首页<b></font></a><h2>
+		<hr>
+		<table class = "table1" border="1" align="left" width="30%" cellpadding="5" cellspacing="0" >
+		<tr style="color:white;"><td>序号</td><td>{{book.ISBN}}</td></tr>
+		<tr style="color:white;"><td>书名</td><td><a href="/searchallbybook/{{book.Title}}/"><font color="white"><b>{{book.Title}}</b></font></a></td></tr>
+		<tr style="color:white;"><td>作者</td><td><a href="/searchbookbyauthor/{{book.AuthorID.AuthorID}}/"><font color="white"><b>{{book.AuthorID.Name}}</b></font></a></td></tr>
+		<tr style="color:white;"><td>出版社</td><td>{{book.Publisher}}</td></tr>
+		<tr style="color:white;"><td>出版日期</td><td>{{book.PublishDate}}</td></tr>
+		<tr style="color:white;"><td>价格</td><td>{{book.Price}}</td></tr>
+		</table>
+		<table class = "table2" border="1" align="right" width="20%" cellpadding="5" cellspacing="0" >
+		<tr style="color:white;"><td>编号</td><td>{{author.AuthorID}}</td></tr>
+		<tr style="color:white;"><td>姓名</td><td><a href="/searchbookbyauthor/{{author.AuthorID}}/"><font color="white"><b>{{author.Name}}</b></font></a></td></tr>
+		<tr style="color:white;"><td>年龄</td><td>{{author.Age}}</td></tr>
+		<tr style="color:white;"><td>国籍</td><td>{{author.Country}}</td></tr>
+		</table>
+</body>
+
+
+</html>

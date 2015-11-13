@@ -1,0 +1,62 @@
+﻿<html>
+<title>addauthor</title>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+	h1{margin-top:50px}
+        div{
+	width:300px;
+	height:380px;
+ 	background-color:#969696;
+	border-radius:30px;
+	margin-top:10px;
+        }
+	li{
+	margin-left:0px;
+        }
+	input{
+	background-color:#4B4B4B;color:white;
+	width:200px;
+	margin-top:20px;
+	margin-right:35px;
+	margin-left:2px;
+	height:50px;
+	font-size:20px;
+        }strong{
+	font-size:12px;
+	}#sub,#rst{
+	BACKGROUND-COLOR:#FFFFFF;
+	margin-top:2px;
+	width:60px;
+	height:30px;
+	border-radius:15px;
+	}#sub{
+	margin-left:20px;
+        
+	}#rst{
+	margin-right:60px;
+        </style>
+</head>
+<body bgcolor="#242424">
+<center><h1><font color="yellow"><b>添加作者<b></font></h1>
+<hr>
+<h2><center><a href="/index/"><font color="yellow"><b>返回首页<b></font></a><h2>
+<hr>
+<div>
+<form action="/addauthor/" method="post">
+		{%csrf_token%}
+		<ul>
+		<li>{{form.AuthorID}}<strong style="color:black">{{form.AuthorID.errors}}</strong></li>
+		<li>{{form.Name}}<strong style="color:black">{{form.Name.errors}}</strong></li>
+		<li>{{form.Age}}<strong style="color:black">{{form.Age.errors}}</strong></li>
+		<li>{{form.Country}}<strong style="color:black">{{form.Country.errors}}</strong></li>
+		<li>
+		<input type="submit" id="sub" value="提交" style="background:#242424;color:white">
+		<input type="reset" id="rst" value="重置" style="background:#242424;color:white"></li>
+</ul>
+		</form>
+</div>
+<hr>
+<hr>
+</body>
+</html>

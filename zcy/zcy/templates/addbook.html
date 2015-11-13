@@ -1,0 +1,75 @@
+﻿<html>
+<title>addbook</title>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css"> 
+	h1{margin-top:50px}
+        div{
+	width:300px;
+	height:450px;
+ 	background-color:#969696;
+	border-radius:30px;
+	margin-top:10px;
+        }
+	li{
+	margin-left:0px;
+        }
+	input{
+	background-color:#4B4B4B;color:white;
+	width:200px;
+	margin-top:20px;
+	margin-right:35px;
+	margin-left:2px;
+	height:40px;
+	font-size:20px;
+        }strong{
+	font-size:12px;
+	}#sub,#rst{
+	margin-top:2px;
+	width:60px;
+	height:30px;
+	border-radius:15px;
+	}#sub{
+	margin-left:10px;
+	}#rst{
+	margin-right:40px;
+	}
+	#author{
+	font-size:20px;
+	margin-top:20px;
+	margin-right:40px;
+	list-style:none;
+	}
+	select,option{
+	background-color:#4B4B4B;color:white;
+	scrollbar-arrow-color:#E6C3B9;
+	}
+	
+        </style>
+
+</head>
+<body bgcolor="#242424">
+<center><h1><font color="yellow"><b>添加书籍<b></font></h1>
+<hr>
+<h2><center><a href="/index/"><font color="yellow"><b>返回首页<b></font></a><h2>
+<hr>
+<div>
+<form  method="post">
+		{%csrf_token%}
+		<ul>
+		<li>{{form.ISBN}}<strong style="color:black">{{form.ISBN.errors}}</strong></li>
+		<li>{{form.Title}}<strong style="color:black">{{form.Title.errors}}</strong></li>
+		<li id="author">作者: {{form.AuthorID}}<strong style="color:black">{{form.AuthorID.errors}}</strong><a href = "/addauthor/"><font color = "black"><b>添加作者</b></font><a></li>
+		<li>{{form.Publisher}}<strong style="color:black">{{form.Publisher.errors}}</strong></li>
+		<li>{{form.PublishDate}}<strong style="color:black">{{form.PublishDate.errors}}</strong></li>
+		<li>{{form.Price}}<strong style="color:black">{{form.Price.errors}}</strong></li>
+		<li>
+		<input type="submit" id="sub" value="提交" style="background:#242424;color:white">
+		<input type="reset" id="rst" value="重置" style="background:#242424;color:white"></li>
+</ul>
+		</form></div>
+<hr>
+<hr>
+
+</body>
+</html>

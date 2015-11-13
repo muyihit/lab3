@@ -1,0 +1,23 @@
+﻿<html>
+<head><style>h1{margin-top:50px}</style></head>
+<body bgcolor="#242424">
+		<center><h1><font color="yellow"><b>书籍列表<b></font></h1>
+		<hr>
+		<h2><center><a href="/index/"><font color="yellow">返回首页<b></font></a><h2>
+		<hr>
+		<table border="1" align="center" width="80%" cellpadding="5" cellspacing="0" >
+		<tr style="color:white;"><th>序号</th><th>书名</th><th>作者</th><th>出版社</th><th>出版日期</th><th>价格</th><th>操作</th>
+		{%for book in booklist%}
+			<tr style="color:white;">
+			<td>{{book.ISBN}}</td>
+			<td><a href="/searchallbybook/{{book.Title}}/"><font color="white"><b>{{book.Title}}</b></font></a></td>
+			<td><a href="/searchbookbyauthor/{{book.AuthorID.AuthorID}}/"><font color="white"><b>{{book.AuthorID.Name}}</b></font></a></td>
+			<td>{{book.Publisher}}</td>
+			<td>{{book.PublishDate}}</td>
+			<td>{{book.Price}}</td>
+			<td><a href="/DeleteBook? title={{book.Title}}"><font color="white"><b>删除</b></font></a></td>
+			</tr>
+		{%endfor%}
+		</table>
+		<hr>
+</body>

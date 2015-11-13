@@ -1,0 +1,42 @@
+﻿<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style>.table3{margin-left:410px;} .table4{margin-right:410px;} h1{margin-top:50px}</style>
+	</head>
+	<body bgcolor = #242424>
+		<center><h1><font color="yellow"><b>图书管理系统<b></font></h1>
+		<hr>
+		<table class = "table3" align = "left">
+		<tr><td><h2><center><a href="/addauthor/"><font color="yellow"><b>点此添加作者</b></font></a></h2></td></tr>
+		</table>
+		<table class = "table4" align = "right">
+		<tr><td><h2><center><a href="/addbook/"><font color="yellow"><b>点此添加书籍</b></font></a></h2></td></tr>
+		</table>
+		<hr>
+		<hr>
+		<hr>
+		<hr>
+		<table class = "table1" border="1" align="center" width="70%" cellpadding="5" cellspacing="0">
+		<tr style="color:white;"><th>序号</th><th>书名</th><th>作者</th><th>出版社</th><th>出版日期</th><th>价格</th><th>操作</th>
+		{%for book in booklist%}
+			<tr style="color:white;">
+			<td><center>{{book.ISBN}}</td>
+			<td><center><a href="/searchallbybook/{{book.Title}}/"><font color="white"><b>{{book.Title}}</b></font></a></td>
+			<td><center><a href="/searchbookbyauthor/{{book.AuthorID.AuthorID}}/"><font color="white"><b>{{book.AuthorID.Name}}</b></font></a></td>
+			<td><center>{{book.Publisher}}</td>
+			<td><center>{{book.PublishDate}}</td>
+			<td><center>{{book.Price}}</td>
+			<td><center><a href="/deletebook/{{book.Title}}/"><font color="white"><b>删除</b></font></a>&nbsp;<a href="/updatebook/{{book.ISBN}}/"><font color="white"><b>修改</b></font></a></td>
+			</tr>
+		{%endfor%}
+		</table>
+		<hr>
+		<form  method="POST">
+		<table class = "table2" border="1" align="center" width="20%" cellpadding="5" cellspacing="0" >
+		<tr><td><input type="text" name="q" style="background:#4B4B4B;color:white"></td><td><input type="submit" value="查询作者" style="background:black;color:white"></td></tr>
+        </table>
+    	</form>
+		
+		
+	</body>
+</html>
