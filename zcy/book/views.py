@@ -21,7 +21,6 @@ class BookForm(forms.ModelForm):
         
 class AuthorForm(forms.ModelForm):
     AuthorID = forms.IntegerField(widget=forms.NumberInput(attrs={"placeholder":"作者编号"}))
-    Name = forms.CharField(max_length = 20,widget=forms.TextInput(attrs={"placeholder":"姓名"}))
     Age = forms.CharField(max_length = 10,widget=forms.TextInput(attrs={"placeholder":"年龄"}))
     Country = forms.CharField(max_length = 20,widget=forms.TextInput(attrs={"placeholder":"国家"}))
     class Meta:

@@ -13,7 +13,6 @@ class Author(models.Model):
 
 class Book(models.Model):
     ISBN = models.IntegerField(primary_key = True)
-    Title = models.CharField(max_length = 20, unique=True)
     AuthorID = models.ForeignKey(Author)
     Publisher = models.CharField(max_length = 30)
     PublishDate = models.CharField(max_length = 20)

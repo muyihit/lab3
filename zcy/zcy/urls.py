@@ -26,5 +26,4 @@ urlpatterns = [
     url(r'^searchbookbyauthor/(.+)/$', searchbookbyauthor),
     url(r'^searchallbybook/(.+)/$', searchallbybook),
     url(r'^deletebook/(.+)/$', deletebook),
-    url(r'^updatebook/(.+)/$', updatebook),
 ]
